@@ -1,0 +1,40 @@
+{% extends "ToDo/base.html" %}
+{% load static%}
+{% block header %}
+    <h1>Atualizar tarefa</h1>
+{% endblock %}
+{% block content%}
+    <div id="NovaTarefa_box">
+        <form action="{% url 'atualizaForm' id %}" method="POST" autocomplete="off">
+            {% csrf_token %}
+            <fieldset>
+                <label for="nome" class="name">Tarefa:</label><input type="text" name="nome" class="nome" value="{{task}}"><br>
+                <label for="descript" >Descrição:</label><br>
+                <textarea name="descript" class="descript" cols="30" rows="10">{{descript}}</textarea><br>
+                <div id="statusBox">
+                    {%if status == "E"%}
+                        <div>
+                            <input type="radio" name="status" value="Realizada" id="realizada" checked>
+                            <label for="realizada">Realizada</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="status" value="Realizar" id="realizar">
+                            <label for="realizar">Realizar</label>
+                        </div>
+                    {%else%}
+                    <div>
+                        <input type="radio" name="status" value="Realizada" id="realizada">
+                        <label for="realizada">Realizada</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="status" value="Realizar" id="realizar" checked>
+                        <label for="realizar">Realizar</label>
+                    </div>
+                    {%endif%}
+                </div>
+
+                <button class="save">Salvar</button> <span class="cancel"><a href="{% url 'index'%}" >Cancelar</a></span>
+            </fieldset>
+        </form>
+    </div>
+{% endblock%}

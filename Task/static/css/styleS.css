@@ -1,0 +1,251 @@
+* { /** Resetando tudo**/
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style:none;
+    border:0
+    }
+
+body{   /* Alterando a disposição do bloco principal em realação a pagina*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.principal{ /*Bloco Principal*/
+    height: 78vh;
+    width: 40vw;
+    background-color: #D9D8DD;
+    border-radius: 1.68em;
+    margin-top: 4.81em;
+    box-shadow: 0.375em 0.375em 0.4375em rgba(0, 0, 0, 0.336);
+}
+
+#header{    /*Cabeçalho da aplicação*/
+    height: 20vh;
+    width: 40vw;
+    background-image: linear-gradient(to right, #826DD6, #AA98F0);
+    border-radius: 1.68em 1.68em 0em 0em;
+}
+#header > h1{
+    color: #ffffff;
+    padding-left:0.8em;
+    padding-top: 0.8em;
+    font-size: 45px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Barra de pesquisa*/
+#divBusca{
+    background-color: white;
+    margin-left: 19.23%;
+    margin-top: 4%;
+    width: 60%;
+    height: 3.5vh;
+    border-radius: 1.68em;
+    border: solid 1px rgba(0, 0, 0, 0.212);
+    float: left;
+}
+
+#divBusca form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#divBusca input[type='text']{
+    float: left;
+    width: 85%;
+    height: 3vh;
+    padding-left: 2%;
+    border-radius: 27px;
+    border: none;
+    background: transparent;
+}
+#divBusca input[type='text']:focus{
+    box-shadow: 0;
+    outline: 0;
+}
+#divBusca button{
+    background-color: transparent;
+    margin-top: 0.5%;
+}
+
+/*scroll-bar*/
+#content{
+    height: 73%;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+    background-color: transparent;
+}
+/* Link para pagina adicionar tarefas*/
+#adicionar{
+    margin-left: 90%;
+    margin-top: 1%;
+}
+
+/*Tasks*/
+.contentTask{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#Task{
+    width: 80%;
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2%;
+
+    background-color: #ffffff;
+    border-radius: 1.68em;
+}
+#Task:hover{ /* altera quando o mouse estiver sobre o item*/
+    width: 80.5%;
+    height: 7.5vh;
+}
+#Task li{
+    display: inline;
+}
+.done{
+    text-decoration: line-through;
+}
+
+.status{
+    margin-left: 2%;
+}
+.icon{
+    margin: 2%;
+}
+.icon li:last-child{
+    margin-right: 1px;
+}
+
+/*Pagina adicionar tarefas*/
+    /*Estilo*/
+#NovaTarefa_box label{
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+}
+#NovaTarefa_box input, #NovaTarefa_box textarea{
+    border-radius: 1.68em;
+    padding-left: 3%;
+}
+#NovaTarefa_box input:focus, #NovaTarefa_box textarea:focus{
+    box-shadow: 0;
+    outline: 0;
+    border: 1px solid grey;
+}
+    /*Posição*/
+#NovaTarefa_box{
+    position: relative;
+    left: 25%;
+    top: 20%;
+    width: 320px;
+    height: 270px;
+}
+#NovaTarefa_box form{
+    position: absolute;
+    display: block;
+}
+#NovaTarefa_box fieldset{
+    width: 300px;
+    height: 250px;
+}
+#NovaTarefa_box label{
+    position: absolute;
+    left: -26%;
+    margin-right: 5px;
+}
+#NovaTarefa_box input.nome{
+    position: absolute;
+    left: 10%;
+    top: -17px;
+    width: 95%;
+    margin-bottom: 0.5px;
+    padding: 5px;
+}
+.name{
+    top: -20px;
+}
+.descript{
+    position: absolute;
+    left: 10%;
+    top: 20px;
+}
+.save{
+    position: absolute;
+    bottom: -15%;
+    right: -10%;
+    background-color: white;
+    width: 25%;
+    height: 20%;
+    border-radius: 1.68em;
+}
+.cancel{
+    position: absolute;
+    bottom: -15%;
+    right: 25%;
+    background-color: white;
+    width: 25%;
+    height: 20%;
+    border-radius: 1.68em;
+}
+.cancel a{
+    position: absolute;
+    bottom: 32%;
+    right: 15%;
+}
+
+/* status radio*/
+#statusBox{
+    background-color: white;
+    width: 37%;
+    height: 20%;
+    position: absolute;
+    left: -29%;
+    border-radius: 1.68em;
+}
+#statusBox  label[for="realizada"]{
+    position: absolute;
+    left: 22%;
+    top: 10%;
+}
+#statusBox label[for="realizar"]{
+    position: absolute;
+    left: 22%;
+    top: 50%;
+}
+#realizada{
+    position: absolute;
+    top: 20%;
+    left: 8%;
+}
+#realizar{
+    position: absolute;
+    left: 8%;
+    top: 60%;
+}
+
+
+.cancel:hover{
+    background-color: rgba(255, 0, 0, 0.527);
+}
+.save:hover{
+    background-color: rgba(0, 128, 0, 0.527);
+}
+input::placeholder{
+    font-family: 'Roboto', sans-serif;
+}
+
+/*retirando estilo de links*/
+a{
+    text-decoration: none;
+    color: black;
+
+}

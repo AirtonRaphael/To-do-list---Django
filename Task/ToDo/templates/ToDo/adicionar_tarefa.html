@@ -1,0 +1,18 @@
+{% extends "ToDo/base.html" %}
+{% load static%}
+{% block header %}
+    <h1>Criar nova tarefa</h1>
+{% endblock %}
+{% block content%}
+    <div id="NovaTarefa_box">
+        <form action="{% url 'processa_form' %}" method="POST" autocomplete="off">
+            {% csrf_token %}
+            <fieldset>
+                <label for="nome" class="name">Tarefa:</label><input type="text" name="nome" class="nome" placeholder="nome"><br>
+                <label for="descript" >Descrição:</label><br>
+                <textarea name="descript" class="descript" cols="30" rows="10" placeholder="Descrição da tarefa..."></textarea><br>
+                <button class="save">Salvar</button> <span class="cancel"><a href="{% url 'index'%}" >Cancelar</a></span>
+            </fieldset>
+        </form>
+    </div>
+{% endblock%}
